@@ -62,18 +62,20 @@
             text-align: center;
         }
         
-.hidden {
-    opacity: 0;
-    height: 0;
-    overflow: hidden; /* Это поможет скрыть содержимое */
-    transition: opacity 0.5s ease-out, height 0.5s ease-out;
-}
-
 .visible {
     opacity: 1;
-    height: auto; /* Или укажите конкретную высоту */
-    transition: opacity 0.5s ease-in, height 0.5s ease-in;
+    height: auto;
+    max-height: 500px; /* Задайте максимальную высоту */
+    transition: opacity 0.5s ease-in, max-height 0.5s ease-in;
 }
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+}
+
     </style>
 </head>
 <body>
