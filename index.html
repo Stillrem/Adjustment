@@ -1,42 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculation App</title>
+    <title>Вычисление оплаты</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        input[type="number"] {
-            width: 100px;
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #input-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #e0e0e0;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #1565c0;
         }
         .result {
             margin-top: 20px;
-            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
         }
     </style>
 </head>
 <body>
-    <h1>Calculation App</h1>
-    <label for="hours">Часы: </label>
-    <input type="number" id="hours" min="0" value="0"><br><br>
-    <label for="minutes">Минуты: </label>
-    <input type="number" id="minutes" min="0" value="0"><br><br>
-    <label for="basePay">Base Pay: </label>
-    <input type="number" id="basePay" min="0" value="0"><br><br>
-    <button onclick="calculate()">Calculate</button>
-    <div class="result" id="result"></div>
-
+    <div>
+        <h1>Калькулятор оплаты</h1>
+        <div id="input-container" class="visible">
+            <input type="number" id="hours" placeholder="Часы">
+            <input type="number" id="minutes" placeholder="Минуты">
+            <input type="number" id="basePay" placeholder="Base Pay">
+        </div>
+        <div style="text-align: center;">
+            <button onclick="toggleInput()">Скрыть/Показать поля</button>
+            <button onclick="calculatePay()">Вычислить</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+    
     <script>
-        function calculate() {
-            let hours = parseFloat(document.getElementById('hours').value);
-            let minutes = parseFloat(document.getElementById('minutes').value);
-            let basePay = parseFloat(document.getElementById('basePay').value);
+        function calculatePay() {
+            const hours = parseFloat(document.getElementById('hours').value) || 0;
+            const minutes = parseFloat(document.getElementById('minutes').value) || 0;
+            const basePay = parseFloat(document.getElementById('basePay').value) || 0;
+          
+            const pay = 23 * (hours + (minutes * 1.6666 / 100)) - basePay;
+            document.getElementById('result').innerText = `Результат: ${pay.toFixed(2)}`;
+        }
 
-            let result = 23 * (hours + (minutes * 1.6666 / 100)) - basePay;
-            document.getElementById('result').textContent = `Result: ${result.toFixed(2)}`;
+        function toggleInput() {
+            const inputContainer = document.getElementById('input-container');
+            if (inputContainer.classList.contains('visible')) {
+                inputContainer.classList.remove('visible');
+                inputContainer.classList.add('hidden');
+            } else {
+                inputContainer.classList.remove('hidden');
+                inputContainer.classList.add('visible');
+            }
         }
     </script>
 </body>
