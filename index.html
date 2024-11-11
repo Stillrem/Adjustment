@@ -16,5 +16,28 @@
             margin-top: 20px;
             font-weight: bold;
         }
+    </style>
+</head>
+<body>
+    <h1>Calculation App</h1>
+    <label for="hours">Часы: </label>
+    <input type="number" id="hours" min="0" value="0"><br><br>
+    <label for="minutes">Минуты: </label>
+    <input type="number" id="minutes" min="0" value="0"><br><br>
+    <label for="basePay">Base Pay: </label>
+    <input type="number" id="basePay" min="0" value="0"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculate() {
+            let hours = parseFloat(document.getElementById('hours').value);
+            let minutes = parseFloat(document.getElementById('minutes').value);
+            let basePay = parseFloat(document.getElementById('basePay').value);
+
+            let result = 23 * (hours + (minutes * 1.6666 / 100)) - basePay;
+            document.getElementById('result').textContent = `Result: ${result.toFixed(2)}`;
+        }
+    </script>
 </body>
 </html>
