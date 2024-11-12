@@ -4,7 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вычисление оплаты</title>
-    <link rel="manifest" href="/manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #input-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 300px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #e0e0e0;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -20,5 +86,27 @@
         </div>
         <div class="result" id="result"></div>
     </div>
+    
+    <script>
+        function calculatePay() {
+            const hours = parseFloat(document.getElementById('hours').value) || 0;
+            const minutes = parseFloat(document.getElementById('minutes').value) || 0;
+            const basePay = parseFloat(document.getElementById('basePay').value) || 0;
+          
+            const pay = 23 * (hours + (minutes * 1.6666 / 100)) - basePay;
+            document.getElementById('result').innerText = `Результат: ${pay.toFixed(2)}`;
+        }
+
+        function toggleInput() {
+            const inputContainer = document.getElementById('input-container');
+            if (inputContainer.classList.contains('visible')) {
+                inputContainer.classList.remove('visible');
+                inputContainer.classList.add('hidden');
+            } else {
+                inputContainer.classList.remove('hidden');
+                inputContainer.classList.add('visible');
+            }
+        }
+    </script>
 </body>
 </html>
