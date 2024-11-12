@@ -61,15 +61,21 @@
             font-size: 20px;
             text-align: center;
         }
-        .hidden {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-        .visible {
-            opacity: 1;
-            transition: opacity 0.5s ease-in;
-        }
+        
+.visible {
+    opacity: 1;
+    height: auto;
+    max-height: 500px; /* Задайте максимальную высоту */
+    transition: opacity 0.5s ease-in, max-height 0.5s ease-in;
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+}
+
     </style>
 </head>
 <body>
