@@ -62,7 +62,6 @@ button:hover {
 }
 
 #result {
-    display: none;
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
