@@ -11,7 +11,8 @@ function calculate() {
     const difference = 23 - hourlyRate;
     const additionalPay = hours * difference;
 
-    const resultElement = document.getElementById('result').classList.remove('hidden');
+    const resultElement = document.getElementById('result');
+    resultElement.style.display = 'block';
     resultElement.innerHTML = `
         Почасовая ставка: $${hourlyRate.toFixed(2)}<br>
         Разница со ставкой $23: $${difference.toFixed(2)}<br>
