@@ -8,7 +8,7 @@ function calculate() {
     }
 
     const hourlyRate = basePay / hours;
-    const difference = 23 - hourlyRate;
+    const difference = 23.5 - hourlyRate;
     const additionalPay = hours * difference;
 
     const resultElement = document.getElementById('result');
