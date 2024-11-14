@@ -1,4 +1,3 @@
-javascript
 function calculate() {
     const hours = parseFloat(document.getElementById('hours').value);
     const basePay = parseFloat(document.getElementById('basePay').value);
