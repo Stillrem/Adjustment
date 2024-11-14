@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вычисление оплаты</title>
+    <title>Калькулятор зарплаты</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 
 </head>
 <body>
     <div>
-        <h1>Калькулятор оплаты</h1>
-        <div id="input-container">
-            <input type="number" id="hours" placeholder="Часы">
-            <input type="number" id="minutes" placeholder="Минуты">
-            <input type="number" id="basePay" placeholder="Base Pay">
-        </div>
-        <div style="text-align: center;">
-            <button onclick="calculatePay()">Вычислить</button>
+    <h1>Калькулятор зарплаты</h1>
+    <input type="number" id="hours" placeholder="Введите количество часов">
+    <input type="number" id="basePay" placeholder="Введите базовую оплату">
+    <button onclick="calculate()">Рассчитать</button>
         </div>
         <div class="result" id="result"></div>
     </div>
