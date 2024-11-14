@@ -1,11 +1,24 @@
-function calculatePay() {
-            const hours = parseFloat(document.getElementById('hours').value) || 0;
-            const minutes = parseFloat(document.getElementById('minutes').value) || 0;
-            const basePay = parseFloat(document.getElementById('basePay').value) || 0;
-          
-            const pay = 23 * (hours + (minutes / 100)) - basePay;
-            document.getElementById('result').innerText = `Adjustment: ${pay.toFixed(2)}`;
-        }
+javascript
+function calculate() {
+    const hours = parseFloat(document.getElementById('hours').value);
+    const basePay = parseFloat(document.getElementById('basePay').value);
+
+    if (isNaN(hours) || isNaN(basePay)) {
+        alert('Пожалуйста, введите корректные числовые значения');
+        return;
+    }
+
+    const hourlyRate = basePay / hours;
+    const difference = 23 - hourlyRate;
+    const additionalPay = hours * difference;
+
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = `
+        Почасовая ставка: $${hourlyRate.toFixed(2)}<br>
+        Разница со ставкой $23: $${difference.toFixed(2)}<br>
+        Дополнительная оплата: $${additionalPay.toFixed(2)}
+    `;
+}
 
 // Регистрация service worker
 if ('serviceWorker' in navigator) {
