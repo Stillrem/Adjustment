@@ -3,20 +3,21 @@ body {
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
-    background: linear-gradient(45deg, #6ab7f5, #f086d3);
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #e0e0e0;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(30, 30, 30, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 input, button {
@@ -27,36 +28,36 @@ input, button {
     font-size: 16px;
     border: none;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #333;
+    background: rgba(50, 50, 50, 0.2);
+    color: #e0e0e0;
     transition: all 0.3s ease;
 }
 
 input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5);
+    background: rgba(70, 70, 70, 0.3);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
 }
 
 button {
-    background: rgba(0, 122, 255, 0.8);
+    background: rgba(0, 100, 200, 0.8);
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background: rgba(0, 122, 255, 1);
+    background: rgba(0, 120, 240, 1);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 120, 240, 0.4);
 }
 
 #result {
     margin-top: 20px;
     font-weight: bold;
-    color: #333;
+    color: #e0e0e0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(50, 50, 50, 0.2);
     padding: 15px;
     border-radius: 10px;
 }
