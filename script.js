@@ -21,3 +21,4 @@ if ('serviceWorker' in navigator) {
             document.addEventListener('dblclick', function(event) {
                 event.preventDefault();
             }, { passive: false })
+            document.addEventListener('DOMContentLoaded', calculatePay);
