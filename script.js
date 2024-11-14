@@ -34,3 +34,14 @@ if ('serviceWorker' in navigator) {
             document.addEventListener('dblclick', function(event) {
                 event.preventDefault();
             }, { passive: false })
+
+function updateGradient() {
+    const root = document.documentElement;
+    root.style.setProperty('--hue1', Math.random() * 360);
+    root.style.setProperty('--hue2', Math.random() * 360);
+    root.style.setProperty('--hue3', Math.random() * 360);
+    root.style.setProperty('--hue4', Math.random() * 360);
+}
+
+setInterval(updateGradient, 5000); // Обновляем цвета каждые 5 секунд
+updateGradient(); // Инициализация цветов
