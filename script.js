@@ -7,17 +7,6 @@ function calculatePay() {
             document.getElementById('result').innerText = `Adjustment: ${pay.toFixed(2)}`;
         }
 
-        function toggleInput() {
-            const inputContainer = document.getElementById('input-container');
-            if (inputContainer.classList.contains('visible')) {
-                inputContainer.classList.remove('visible');
-                inputContainer.classList.add('hidden');
-            } else {
-                inputContainer.classList.remove('hidden');
-                inputContainer.classList.add('visible');
-            }
-        }
-
 // Регистрация service worker
 if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('/service-worker.js')
