@@ -3,7 +3,7 @@ function calculatePay() {
             const minutes = parseFloat(document.getElementById('minutes').value) || 0;
             const basePay = parseFloat(document.getElementById('basePay').value) || 0;
           
-            const pay = 24 * (hours + (minutes / 100)) - basePay;
+            const pay = 23 * (hours + (minutes / 100)) - basePay;
             document.getElementById('result').innerText = `Adjustment: ${pay.toFixed(2)}`;
         }
 
