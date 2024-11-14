@@ -35,13 +35,20 @@ if ('serviceWorker' in navigator) {
                 event.preventDefault();
             }, { passive: false })
 
-function updateGradient() {
-    const root = document.documentElement;
-    root.style.setProperty('--hue1', Math.random() * 360);
-    root.style.setProperty('--hue2', Math.random() * 360);
-    root.style.setProperty('--hue3', Math.random() * 360);
-    root.style.setProperty('--hue4', Math.random() * 360);
+function getRandomDarkColor() {
+    const r = Math.floor(Math.random() * 100);
+    const g = Math.floor(Math.random() * 100);
+    const b = Math.floor(Math.random() * 100);
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
-setInterval(updateGradient, 5000); // Обновляем цвета каждые 5 секунд
-updateGradient(); // Инициализация цветов
+function setRandomColors() {
+    const root = document.documentElement;
+    root.style.setProperty('--color1', getRandomDarkColor());
+    root.style.setProperty('--color2', getRandomDarkColor());
+    root.style.setProperty('--color3', getRandomDarkColor());
+    root.style.setProperty('--color4', getRandomDarkColor());
+}
+
+setRandomColors();
+setInterval(setRandomColors, 20000); // Меняем цвета каждые 20 секунд
