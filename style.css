@@ -87,11 +87,19 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
+    height: 50px;
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 20px;
         max-width: 90%;
+    }
+}
+
+@media (orientation: landscape) {
+    .container {
+        max-height: 80vh;
+        flex-wrap: nowrap;
     }
 }
