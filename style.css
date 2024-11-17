@@ -85,7 +85,7 @@ button:hover {
 #result {
     display: none;
     width: 100%;
-    max-width: 90%;
+    max-width: 400%;
     padding: 15px;
     margin-top: 20px;
     margin: 15px 0;
@@ -94,6 +94,10 @@ button:hover {
     box-sizing: border-box;
     border: none;
     border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    max-height: 90vh;
 }
 
 @media (max-width: 600px) {
