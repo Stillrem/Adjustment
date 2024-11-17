@@ -84,9 +84,13 @@ button:hover {
 
 #result {
     display: none;
+    width: 100%; 
+    padding: 15px;
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
+    box-sizing: border-box; 
+    border-radius: 10px;
 }
 
 @media (max-width: 600px) {
