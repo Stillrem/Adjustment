@@ -84,7 +84,7 @@ button:hover {
 
 #result {
     display: none;
-    max-width: 370px;
+    max-width: 360px;
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
