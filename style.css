@@ -31,6 +31,7 @@ body {
     justify-content: center;
     color: #e0e0e0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .container {
