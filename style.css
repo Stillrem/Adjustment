@@ -1,5 +1,5 @@
 /* Отключение прокрутки для html и body */
-html, input, body {
+html, body {
     overflow: hidden;
     height: 100%;
     margin: 0;
@@ -72,6 +72,10 @@ input, button, #result {
     color: #e0e0e0;
     transition: all 0.3s ease;
     box-sizing: border-box;
+}
+
+input {
+    overflow: hidden
 }
 
 input:focus {
