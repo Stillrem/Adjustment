@@ -1,5 +1,5 @@
 /* Отключение прокрутки для html и body */
-html, body {
+html, input, body {
     overflow: hidden;
     height: 100%;
     margin: 0;
