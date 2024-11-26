@@ -1,10 +1,10 @@
-/* Отключение прокрутки для html и body */
+/* Отключение прокрутки для html и body
 html, body {
     overflow: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
-}
+}*/
 
 @keyframes gradientAnimation {
     0% {
